@@ -104,7 +104,7 @@ final class MockData {
         rating: "2")
     
     var leaderboardStatistic: [LeaderBoardModel] = []
-    var userCardInfo: [ProfileModel] = []
+    var userCardInfo: [ProfileModelForStatistic] = []
     var collectionOfNft: [NftModelMockData] = []
     
     var placeholderUser: UsersModel = UsersModel(
@@ -142,7 +142,7 @@ final class MockData {
         ].forEach {
             leaderboardStatistic.append($0.0)
             userCardInfo.append(
-                ProfileModel(id: $0.0.id,
+                ProfileModelForStatistic(id: $0.0.id,
                              name: $0.0.name,
                              avatar: $0.0.avatar,
                              description: $0.1,

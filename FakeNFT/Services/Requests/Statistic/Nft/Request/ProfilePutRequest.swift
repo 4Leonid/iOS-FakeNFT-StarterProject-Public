@@ -2,7 +2,7 @@ import Foundation
 
 struct ProfilePutRequest: NetworkRequest {
     
-    let profile: Profile
+    let profile: ProfileLikes
     var dto: Encodable?
     var httpMethod: HttpMethod = .put
     var endpoint: URL? {

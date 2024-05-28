@@ -19,7 +19,7 @@ final class NftCellPresenter {
     private var nft: NftModel
     
     private let basketService: BasketService
-    private let profileService: ProfileService
+    private let profileService: ProfileNetworkService
     
     init(
         nft: NftModel,

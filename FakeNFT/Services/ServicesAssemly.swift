@@ -28,7 +28,7 @@ final class ServicesAssembly {
         BasketServiceImpl(networkClient: networkClient)
     }
     
-    var profileService: ProfileService {
+    var profileService: ProfileNetworkService {
         ProfileServiceImpl(networkClient: networkClient)
     }
     

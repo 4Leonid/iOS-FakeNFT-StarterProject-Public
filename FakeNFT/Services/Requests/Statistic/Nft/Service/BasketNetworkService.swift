@@ -1,10 +1,10 @@
 import Foundation
 
-typealias BasketCompletion = (Result<Basket, Error>) -> Void
+typealias BasketCompletion = (Result<BasketNfts, Error>) -> Void
 
 protocol BasketService {
     func loadNft(completion: @escaping BasketCompletion)
-    func updateNft(basket: Basket, completion: @escaping BasketCompletion)
+    func updateNft(basket: BasketNfts, completion: @escaping BasketCompletion)
 }
 
 final class BasketServiceImpl: BasketService {
@@ -21,7 +21,7 @@ final class BasketServiceImpl: BasketService {
         networkClient
             .send(
                 request: request,
-                type: Basket.self
+                type: BasketNfts.self
             ) { result in
                 switch result {
                 case .success(let basket):
@@ -32,13 +32,13 @@ final class BasketServiceImpl: BasketService {
         }
     }
     
-    func updateNft(basket: Basket, completion: @escaping BasketCompletion) {
+    func updateNft(basket: BasketNfts, completion: @escaping BasketCompletion) {
         
         let request = BasketPutRequest(basket: basket)
         networkClient
             .send(
                 request: request,
-                type: Basket.self
+                type: BasketNfts.self
             ) { result in
                 switch result {
                 case .success(let basket):

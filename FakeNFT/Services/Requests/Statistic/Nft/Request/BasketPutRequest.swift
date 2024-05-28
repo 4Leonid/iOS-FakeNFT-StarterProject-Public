@@ -2,7 +2,7 @@ import Foundation
 
 struct BasketPutRequest: NetworkRequest {
     
-    let basket: Basket
+    let basket: BasketNfts
     var dto: Encodable?
     var httpMethod: HttpMethod = .put
     var endpoint: URL? {

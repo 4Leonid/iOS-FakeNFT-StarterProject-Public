@@ -1,13 +1,13 @@
 import Foundation
 
-typealias ProfileCompletion = (Result<Profile, Error>) -> Void
+typealias ProfileCompletion = (Result<ProfileLikes, Error>) -> Void
 
-protocol ProfileService {
+protocol ProfileNetworkService {
     func loadNft(completion: @escaping ProfileCompletion)
-    func updateLikes(profile: Profile, completion: @escaping ProfileCompletion)
+    func updateLikes(profile: ProfileLikes, completion: @escaping ProfileCompletion)
 }
 
-final class ProfileServiceImpl: ProfileService {
+final class ProfileServiceImpl: ProfileNetworkService {
 
     private let networkClient: NetworkClient
 
@@ -21,7 +21,7 @@ final class ProfileServiceImpl: ProfileService {
         networkClient
             .send(
                 request: request,
-                type: Profile.self
+                type: ProfileLikes.self
             ) { result in
                 switch result {
                 case .success(let profile):
@@ -32,13 +32,13 @@ final class ProfileServiceImpl: ProfileService {
         }
     }
     
-    func updateLikes(profile: Profile, completion: @escaping ProfileCompletion) {
+    func updateLikes(profile: ProfileLikes, completion: @escaping ProfileCompletion) {
         
         let request = ProfilePutRequest(profile: profile)
         networkClient
             .send(
                 request: request,
-                type: Profile.self
+                type: ProfileLikes.self
             ) { result in
                 switch result {
                 case .success(let profile):

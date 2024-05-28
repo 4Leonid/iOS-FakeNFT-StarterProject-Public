@@ -1,6 +1,6 @@
 import Foundation
 
-struct ProfileModel: Decodable {
+struct ProfileModelForStatistic: Decodable {
     let id: String
     let name: String
     let avatar: URL

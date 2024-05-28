@@ -2,25 +2,25 @@ import Foundation
 
 protocol LikesInteraction: AnyObject {
     
-    func getProfile() -> Profile
+    func getProfile() -> ProfileLikes
     func getLikes() -> [String]
     func getLikesString() -> String
     func appendLike(by likeId: String)
     func deleteLike(by likeId: String)
-    func updateLikes(with newProfile: Profile)
+    func updateLikes(with newProfile: ProfileLikes)
 }
 
 protocol BasketInteraction: AnyObject {
     
-    func getBasket() -> Basket
+    func getBasket() -> BasketNfts
     func getBasketNfts() -> [String]
     func getBasketString() -> String
     func appendNft(by id: String)
     func deleteNft(by id: String)
-    func updateNfts(with newBasket: Basket)
+    func updateNfts(with newBasket: BasketNfts)
 }
 
-struct Basket: Codable {
+struct BasketNfts: Codable {
     var nfts: [String]
     
     func transformNfts() -> String {
@@ -30,7 +30,7 @@ struct Basket: Codable {
     }
 }
 
-struct Profile: Codable {
+struct ProfileLikes: Codable {
     var likes: [String]
     
     func transformNfts() -> String {
@@ -48,19 +48,19 @@ final class CollectionOfNftPresenter {
     private var nfts: [String]
     private var nftsFromNetwork: [NftModel] = []
     private var nftNetworkService: NftNetworkService
-    private var profileService: ProfileService
+    private var profileService: ProfileNetworkService
     
     private let dispatchGroup = DispatchGroup()
     
-    private var nftsWithLike: Profile
-    private var nftsOnBasket: Basket
+    private var nftsWithLike: ProfileLikes
+    private var nftsOnBasket: BasketNfts
     
     init(
         with nfts: [String]?,
         servicesAssembly: ServicesAssembly
     ) {
-        self.nftsWithLike = Profile(likes: [])
-        self.nftsOnBasket = Basket(nfts: [])
+        self.nftsWithLike = ProfileLikes(likes: [])
+        self.nftsOnBasket = BasketNfts(nfts: [])
         
         self.nftNetworkService = servicesAssembly.nftNetworkService
         self.profileService = servicesAssembly.profileService
@@ -123,7 +123,7 @@ final class CollectionOfNftPresenter {
 //MARK: - LikesInteraction
 extension CollectionOfNftPresenter: LikesInteraction {
     
-    func getProfile() -> Profile {
+    func getProfile() -> ProfileLikes {
         
         nftsWithLike
     }
@@ -150,7 +150,7 @@ extension CollectionOfNftPresenter: LikesInteraction {
         }
     }
     
-    func updateLikes(with newProfile: Profile) {
+    func updateLikes(with newProfile: ProfileLikes) {
         
         nftsWithLike.likes = newProfile.likes
     }
@@ -159,7 +159,7 @@ extension CollectionOfNftPresenter: LikesInteraction {
 //MARK: - BasketInteraction
 extension CollectionOfNftPresenter: BasketInteraction {
     
-    func getBasket() -> Basket {
+    func getBasket() -> BasketNfts {
         
         nftsOnBasket
     }
@@ -186,7 +186,7 @@ extension CollectionOfNftPresenter: BasketInteraction {
         }
     }
     
-    func updateNfts(with newBasket: Basket) {
+    func updateNfts(with newBasket: BasketNfts) {
         
         nftsOnBasket.nfts = newBasket.nfts
     }
