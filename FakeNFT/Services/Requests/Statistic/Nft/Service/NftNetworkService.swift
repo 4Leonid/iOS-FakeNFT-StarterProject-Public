@@ -24,7 +24,7 @@ final class NftNetworkServiceImpl: NftNetworkService {
         
         let request = NftNetworkRequest(id: id)
         DispatchQueue.global(qos: .userInitiated).sync {
-            networkClient.send(request: request, type: NftModel.self, completionQueue: .global(qos: .userInteractive)) { [weak storage] result in
+            networkClient.send(request: request, type: NftModel.self) { [weak storage] result in
                 switch result {
                 case .success(let nft):
                     storage?.saveNft(nft)

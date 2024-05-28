@@ -269,12 +269,16 @@ extension NftCell: NftCellDelegate {
     func setLike() {
         
         let isLike = presenter.isLiked()
-        likeImageView.isHighlighted = isLike ? true : false
+        DispatchQueue.main.async {
+            self.likeImageView.isHighlighted = isLike
+        }
     }
     
     func setBasket() {
         
         let isBasket = presenter.isOnBasket()
-        basketImageView.isHighlighted = isBasket ? true : false
+        DispatchQueue.main.async {
+            self.basketImageView.isHighlighted = isBasket
+        }
     }
 }
