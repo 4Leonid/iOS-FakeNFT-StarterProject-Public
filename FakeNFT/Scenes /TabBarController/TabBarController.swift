@@ -3,9 +3,11 @@ import UIKit
 final class TabBarController: UITabBarController {
     
     let appConfiguration: AppConfiguration
+    var servicesAssembly: ServicesAssembly!
     
-    init(appConfiguration: AppConfiguration) {
+    init(appConfiguration: AppConfiguration, servicesAssembly: ServicesAssembly) {
         self.appConfiguration = appConfiguration
+        self.servicesAssembly = servicesAssembly
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -39,13 +41,23 @@ final class TabBarController: UITabBarController {
             tag: 2
         )
         
+        let statisticTabBarItem = UITabBarItem(
+            title: NSLocalizedString("Tab.statistic", comment: ""),
+            image: UIImage(systemName: "flag.2.crossed.fill"),
+            tag: 1
+        )
+        
         let profileNC = UINavigationController(rootViewController: appConfiguration.profileViewController)
         profileNC.tabBarItem = profileTabBarItem
         
         let cartNC = UINavigationController(rootViewController: appConfiguration.cartViewController)
         cartNC.tabBarItem = cartTabBarItem
         
-        viewControllers = [profileNC, catalogNC, cartNC]
+        let statisticController = StatisticViewController(servicesAssembly: servicesAssembly)
+        let statisticNC = UINavigationController(rootViewController: statisticController)
+        statisticController.tabBarItem = statisticTabBarItem
+        
+        viewControllers = [profileNC, catalogNC, cartNC, statisticNC]
         
         tabBar.isTranslucent = false
         view.tintColor = .ypBlueUn
