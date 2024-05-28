@@ -215,5 +215,10 @@
 
 ![Simulator Screen Recording - iPhone 15 Pro]([[[https://github.com/4Leonid/%80%D0%B0%D0%BD%D0%B0%202024-05-08%20%D0%B2%2015.08.16.dataset/%D0%97%D0%B0%D0%BF%D0%B8%D1%81%D1%8C%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202024-05-08%20%D0%B2%2015.08.16.mov](https://github.com/4Leonid/iOS-FakeNFT-StarterProject-Public/blob/develop/FakeNFT/Resources/Assets.xcassets/screen_cart_iphone_14_pro.dataset/screen_cart_iphone_14_pro.mp4](https://disk.yandex.ru/i/-LhiLa0uQSO_YQ))))
 
+**Экрана Статистики:**
+
+https://github.com/4Leonid/iOS-FakeNFT-StarterProject-Public/assets/53315878/c03c915a-a7c9-4e63-ae0b-0abc536574ff
+
+
 
 
