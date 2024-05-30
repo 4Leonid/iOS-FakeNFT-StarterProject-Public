@@ -48,6 +48,7 @@
 		0E9EB2972BC447A100762ED1 /* MyNFTCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9EB2962BC447A100762ED1 /* MyNFTCell.swift */; };
 		3F478ECF29DB474E00F6D39E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F478ECE29DB474E00F6D39E /* Colors.swift */; };
 		3F478ED129DB476500F6D39E /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F478ED029DB476500F6D39E /* Fonts.swift */; };
+		3F68069729CBBAF100B4F915 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F68069629CBBAF100B4F915 /* AppDelegate.swift */; };
 		3F68069B29CBBAF100B4F915 /* ProductDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F68069A29CBBAF100B4F915 /* ProductDetailsTableViewController.swift */; };
 		3F6806A029CBBAF200B4F915 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F68069F29CBBAF200B4F915 /* Assets.xcassets */; };
 		3F6806A329CBBAF200B4F915 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F6806A129CBBAF200B4F915 /* LaunchScreen.storyboard */; };
@@ -59,6 +60,7 @@
 		3FC8C38B29D242E90081F015 /* ProductDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC8C38A29D242E90081F015 /* ProductDetailsTableViewCell.swift */; };
 		3FC8C39129D2453B0081F015 /* ExampleRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC8C39029D2453B0081F015 /* ExampleRequest.swift */; };
 		3FC8C39329D246BA0081F015 /* DateFormatters+Presets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC8C39229D246BA0081F015 /* DateFormatters+Presets.swift */; };
+		4D162B1B2C08AF6C007DA011 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E1CD40DB2A96BECC00BE7FE8 /* Localizable.strings */; };
 		4D5811652BE129F80097CB35 /* InteractorsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5811642BE129F80097CB35 /* InteractorsAssembly.swift */; };
 		4D5811672BE15FC50097CB35 /* ProfilePutRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5811662BE15FC50097CB35 /* ProfilePutRequest.swift */; };
 		4D5811692BE16B330097CB35 /* BasketPutRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5811682BE16B330097CB35 /* BasketPutRequest.swift */; };
@@ -1076,6 +1078,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D162B1B2C08AF6C007DA011 /* Localizable.strings in Resources */,
 				3F6806A329CBBAF200B4F915 /* LaunchScreen.storyboard in Resources */,
 				BF995FBB2BB47C1000F4E8EC /* SFProText-Regular.ttf in Resources */,
 				0E830ED12BDC35E40000D615 /* Profile.md in Resources */,
@@ -1176,12 +1179,14 @@
 				BF995FCE2BC07F6100F4E8EC /* NFTCollectionsSortOptions.swift in Sources */,
 				BF995FD32BC0812000F4E8EC /* String+Extension.swift in Sources */,
 				BF995FD62BC082DD00F4E8EC /* CatalogDataProvider.swift in Sources */,
+				3F68069729CBBAF100B4F915 /* AppDelegate.swift in Sources */,
 				D4D1074C2BD085C2001AA307 /* OrderService.swift in Sources */,
 				BF0BABC62BC6ED8700494F89 /* CollectionDataRequest.swift in Sources */,
 				D472B71D2BC9F27D006B8A12 /* PaymentViewController.swift in Sources */,
 				D40CF5D62BDC33D900586FF4 /* NftByIdStorage.swift in Sources */,
 				4D8029A42BCC67CB00009F51 /* StatisticTableViewCell.swift in Sources */,
 				4DDB94B02BDAD79100D7CF56 /* BasketNetworkService.swift in Sources */,
+				3F68069729CBBAF100B4F915 /* AppDelegate.swift in Sources */,
 				4D5811652BE129F80097CB35 /* InteractorsAssembly.swift in Sources */,
 				4D66C0562BBF1C8300796AAB /* StatisticViewController.swift in Sources */,
 				4D8029A82BCC72F200009F51 /* MockData.swift in Sources */,
